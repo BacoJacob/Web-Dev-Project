@@ -1,0 +1,42 @@
+<!-- https://console.cloud.google.com/google/maps-apis/overview;onboard=true?project=united-concord-368000
+This is what I’m using for this information
+
+We will first start with setting up the map with this code. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7WhxRueidVlYdCHUFAfjQvQ-ZL14G1GI&callback=initMap"
+    async defer></script>
+  </body>
+</html>
+
+<!-- This will show a map of sydney but we can change the location for the real thing. -->
