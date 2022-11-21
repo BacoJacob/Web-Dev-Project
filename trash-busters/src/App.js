@@ -1,18 +1,19 @@
-import logo from './logo.svg';
 import './sass/App.scss';
-import Button from 'react-bootstrap/Button';
+//import Button from 'react-bootstrap/Button';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Hello, React!</h1>
-        <Button variant="primary" size="lg" active>
-        Google Map API
-        </Button>        
-      </header>
-    </div>
+    //let map;
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+          center: { lat: -34.397, lng: 150.644 },
+          zoom: 8,
+        });
+      }
+      
+
+  //   window.initMap = initMap;
   );
 }
 
