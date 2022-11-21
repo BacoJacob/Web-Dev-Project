@@ -7,8 +7,8 @@ import reportWebVitals from './reportWebVitals';
 //const google = window.google
 
 
-const map = ReactDOM.createMap(document.getElementById('map'));
-map.render(
+const root = ReactDOM.createMap(document.getElementById('root'));
+root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
