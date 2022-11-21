@@ -1,16 +1,15 @@
 import './sass/App.scss';
 import React from 'react';
-import Button from 'react-bootstrap/Button';
+import MainBody from "./components/MainBody";
+import NavbarComponent from "./components/Navbar";
+import Footer from "./components/Footer.jsx";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Hello, React!</h1>
-        <Button variant="primary" size="lg" active>
-        Google Map API
-        </Button>        
-      </header>
+      <NavbarComponent></NavbarComponent>
+      <MainBody></MainBody>
+      <Footer></Footer>
     </div>
   );
 }
