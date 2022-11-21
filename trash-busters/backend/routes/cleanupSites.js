@@ -18,4 +18,29 @@ router.route('/add').post((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/:id').get((req, res) => {
+    CleanupSite.findById(req.params.id)
+    .then(cleanupSite => res.json(cleanupSite))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
+router.route('/:id').delete((req, res) => {
+    CleanupSite.findByIdAndDelete(req.params.id)
+    .then(cleanupSite => res.json('Cleanup site deleted.'))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
+router.route('/update/:id').post((req, res) => {
+    CleanupSite.findById(req.params.id)
+    .then(cleanupSite => {
+        cleanupSite.username = req.body.username;
+        cleanupSite.description = req.body.description;
+
+        cleanupSite.save()
+        .then(() => res.json('Cleanup site updated'))
+        .catch(err => res.status(400).json('Error: ' + err));
+    })
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
 module.exports = router;
