@@ -2,13 +2,12 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const cleanupSiteSchema = new Schema({
+const userSchema = new Schema({
     username: { type: String, required: true},
-    description: { type: String, required: true },
 }, {
     timestamps : true,
 });
 
-const CleanupSite = mongoose.model('CleanupSite', cleanupSiteSchema);
+const User = mongoose.model('User', userSchema);
 
-module.exports = CleanupSite;
+module.exports = User;
