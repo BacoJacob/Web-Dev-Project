@@ -1,49 +1,19 @@
+import logo from './logo.svg';
 import './sass/App.scss';
+import Button from 'react-bootstrap/Button';
 
-import React from 'react';
-// //import Button from 'react-bootstrap/Button';
-// const google = window.google
-
-// function App() {
-//   return new google.maps.Map(document.getElementById("map"), {
-//     center: { lat: -34.397, lng: 150.644 },
-//     zoom: 8,
-//     // mapId: 'MAP_ID'
-//     //<index />
-    
-    
-//   });
-// }
-import {
-  withScriptjs,
-  withGoogleMap,
-  GoogleMap,
-  Marker,
-} from "react-google-maps";
-
-class App extends React.Component {
-  render(){
-    const MapWithAMarker = withScriptjs(withGoogleMap(props =>
-    <GoogleMap
-    defaultZoom={8}
-    defaultCenter={{ lat: -34.397, lng: 150.644 }}
-  >
-    <Marker
-      position={{ lat: -34.397, lng: 150.644 }}
-    />
-  </GoogleMap>
-    ));
-
-return(
-  <MapWithAMarker
-  googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places"
-  loadingElement={<div style={{ height: `100%` }} />}
-  containerElement={<div style={{ height: `400px` }} />}
-  mapElement={<div style={{ height: `100%` }} />}
-/>
-    );
-  }
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <h1>Hello, React!</h1>
+        <Button variant="primary" size="lg" active>
+        Google Map API
+        </Button>        
+      </header>
+    </div>
+  );
 }
-
 
 export default App;
