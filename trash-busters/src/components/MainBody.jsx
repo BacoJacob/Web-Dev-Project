@@ -1,11 +1,17 @@
 import React from "react";
-import GeneratePicture from "./CatGenerator";
+import CatManager from "./CatManager";
+import DogManager from "./DogManager";
+import PicManager from "./PicManager";
 
 function MainBody() {
     return (
         <div>
-            This is the main body.
-            <GeneratePicture></GeneratePicture>
+            <CatManager></CatManager>
+            <div className="min-vh-100">
+
+            </div>
+            <DogManager></DogManager>
+            <PicManager></PicManager>
         </div>
     )
 }
