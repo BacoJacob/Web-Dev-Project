@@ -1,11 +1,9 @@
-import React,{useState, Component} from 'react';
+import React,{Component} from 'react';
 import axios from 'axios';
-import Button from 'react-bootstrap/Button';
-import Image from 'react-bootstrap/Image'
+import Card from 'react-bootstrap/Card'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import "../sass/App.scss"
 
-// make a list. Get each of the URLs from the database and put in the list. For each url, make an img tag and display it
 class PicManager extends Component {
     constructor(props) {
         super(props)
@@ -13,58 +11,47 @@ class PicManager extends Component {
         urls: []
         }
     }
-    
-    
-    // onSuccess(response) {
-    //     let urls = []
-    //     let array = response;
-    //     let arrayLength = Object.keys(array).length;
-    //     console.log(arrayLength);
-    //     for(let i = 0; i <= arrayLength; i++) {
-    //         let url = array.data[i].url;
-    //         console.log(url);
-    //         urls.push(url);
-    //     }
-    //     const urlList = urls.map((url) => 
-    //         <li>{url}</li>
-    //     );
-    // }
-        
-    async getUrls() {
-        let urlsList = []
-        let response = await axios.get('http://localhost:5000/pictures', )
-        .then(function (response) {
-            console.log(response);
-            // onSuccess(response)
-            let array = response;
-            let arrayLength = Object.keys(array).length;
-            for(let i = 0; i <= arrayLength; i++) {
-                let url = array.data[i].url;
-                console.log(url);
-                urlsList.push(url);
-            }
-            this.setState({urls: urlsList})
-            // console.log(response.data[0].url)
+
+    componentDidMount = () => {
+        this.getUrls();
+    };  
+
+    getUrls = () => {
+        axios.get('http://localhost:5000/pictures')
+        .then((response) => {
+            const data = response.data;
+            this.setState({ urls: data});
+            console.log('Received data');
+            console.log(data)
         })
-        .catch(function (error) {
-        console.log(error);
+        .catch(() => {
+            alert('Error getting data');
         });
     }
+
+    displayPics = (pics) => {
+        if (!pics.length) return null;
+
+        return pics.map((url, index) => (
+            // <div key={index}>
+            //     <img src={url.url} alt="" />
+            // </div>
+            <div key={index}>
+                <Card className="saved-pic-card">
+                  <Card.Img className="saved-pic" variant="bottom" src={url.url} />
+                </Card>
+            </div>
+        ));
+    };
     
     render() {
-        this.getUrls()
         return (
-            <div className="mt-3 border" id='savedPics'>
-                <p>This is the pic manager.</p>
-                <ul>
-                    {this.state.urls.map((url, index) => (
-                        <img src={url} alt="" />
-                    ))}
-                </ul>
+            <div className="saved-pics mt-3 border" id='savedPics'>
+                <h2 className='mt-3 mb-3'>View All Saved Pictures Below</h2>
+                {this.displayPics(this.state.urls)}
             </div>
         )
     }
-
 }
 
 export default PicManager;
