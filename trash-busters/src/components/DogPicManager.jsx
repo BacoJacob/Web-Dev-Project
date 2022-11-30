@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import "../sass/App.scss"
 
-class PicManager extends Component {
+class DogPicManager extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -13,23 +13,23 @@ class PicManager extends Component {
     }
 
     componentDidMount = () => {
-        this.getUrls();
+        this.getDogUrls();
     };  
 
-    getUrls = () => {
-        axios.get('http://localhost:5000/pictures')
+    getDogUrls = () => {
+        axios.get('http://localhost:5000/dogPictures')
         .then((response) => {
             const data = response.data;
             this.setState({ urls: data});
-            console.log('Received data');
+            console.log('Received dog data');
             console.log(data)
         })
         .catch(() => {
-            alert('Error getting data');
+            alert('Error getting dog data');
         });
     }
 
-    displayPics = (pics) => {
+    displayDogPics = (pics) => {
         if (!pics.length) return null;
 
         return pics.map((url, index) => (
@@ -47,11 +47,11 @@ class PicManager extends Component {
     render() {
         return (
             <div className="saved-pics mt-3 border" id='savedPics'>
-                <h2 className='mt-3 mb-3'>View All Saved Pictures Below</h2>
-                {this.displayPics(this.state.urls)}
+                <h2 className='mt-3 mb-3'>View All Saved Dog Pictures Below</h2>
+                {this.displayDogPics(this.state.urls)}
             </div>
         )
     }
 }
 
-export default PicManager;
+export default DogPicManager;

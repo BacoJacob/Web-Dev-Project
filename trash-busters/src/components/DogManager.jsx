@@ -8,20 +8,22 @@ import "../sass/App.scss"
 function DogManager() {
     const [url, setUrl] = useState('');
     function fetch_data() {
-        fetch('https://api.thecatapi.com/v1/images/search').then(res => {
+        fetch('https://dog.ceo/api/breeds/image/random').then(res => {
             if(res.ok) {
+                console.log(res);
                 return res.json();
             }
             throw new Error ('Request failure');
         },networkError => console.log(networkError.message)
         ).then(jsonRes => {
-            setUrl(jsonRes[0].url)
+            setUrl(jsonRes.message);
         })    
     }
 
     function send_data() {
         if (url) {
-            axios.post('http://localhost:5000/pictures/add', {
+            axios.post('http://localhost:5000/dogPictures/add', {
+            "breed": "Golden",
             "url": url
             })
             .then(function (response) {
@@ -41,10 +43,9 @@ function DogManager() {
 
     return (
         <div className="mt-3 border" id='dogs'>
-            This is the dogs div
             <div className='d-flex justify-content-center'>
                 <h1>
-                    Random Cat Generator
+                    Random Dog Generator
                 </h1>
             </div>
             <div className="mt-2 d-flex justify-content-center">

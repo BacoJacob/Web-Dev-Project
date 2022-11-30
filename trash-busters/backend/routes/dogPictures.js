@@ -1,5 +1,5 @@
 const router = require('express').Router();
-let Picture = require('../models/picture.model');
+let Picture = require('../models/dogPicture.model');
 
 router.route('/').get((req, res) => {
     Picture.find()
@@ -10,10 +10,10 @@ router.route('/').get((req, res) => {
 router.route('/add').post((req, res) => {
     const url = req.body.url;
 
-    const newPicture = new Picture({url});
+    const newDogPicture = new Picture({url});
 
-    newPicture.save()
-        .then(() => res.json('Picture added!'))
+    newDogPicture.save()
+        .then(() => res.json('Dog picture added!'))
         .catch(err => res.status(400).json('Error: ' + err));
 });
 

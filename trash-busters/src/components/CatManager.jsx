@@ -21,7 +21,7 @@ function CatManager() {
 
     function send_data() {
         if (url) {
-            axios.post('http://localhost:5000/pictures/add', {
+            axios.post('http://localhost:5000/catPictures/add', {
             "url": url
             })
             .then(function (response) {
