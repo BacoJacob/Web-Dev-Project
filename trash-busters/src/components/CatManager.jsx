@@ -1,9 +1,9 @@
 import React,{useState} from 'react';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
-import Image from 'react-bootstrap/Image'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import "../sass/App.scss"
+import Image from 'react-bootstrap/Image';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "../sass/App.scss";
 
 function CatManager() {
     const [url, setUrl] = useState('');

@@ -32,3 +32,18 @@ code {
 .cat-picture-container {
   max-height: 350px;
 }
+
+.saved-pics {
+  display: grid;
+  justify-content: center;
+}
+
+.saved-pic {
+  max-width: auto;
+  max-height: auto;
+  height: 600px;
+}
+
+.saved-pic-card {
+  height: 250px;
+}
