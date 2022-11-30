@@ -8,13 +8,13 @@ class DogPicManager extends Component {
     constructor(props) {
         super(props)
         this.state = {
-        urls: []
+            urls: []
         }
     }
 
     componentDidMount = () => {
         this.getDogUrls();
-    };  
+    };
 
     getDogUrls = () => {
         axios.get('http://localhost:5000/dogPictures')

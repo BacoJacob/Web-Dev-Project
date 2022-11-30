@@ -8,9 +8,9 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/add').post((req, res) => {
+    const breed = req.body.breed;
     const url = req.body.url;
-
-    const newDogPicture = new Picture({url});
+    const newDogPicture = new Picture({breed, url});
 
     newDogPicture.save()
         .then(() => res.json('Dog picture added!'))
