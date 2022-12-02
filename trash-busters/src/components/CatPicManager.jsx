@@ -21,8 +21,8 @@ class CatPicManager extends Component {
         .then((response) => {
             const data = response.data;
             this.setState({ urls: data});
-            console.log('Received cat data');
-            console.log(data)
+            // console.log('Received cat data');
+            // console.log(data)
         })
         .catch(() => {
             alert('Error getting cat data');

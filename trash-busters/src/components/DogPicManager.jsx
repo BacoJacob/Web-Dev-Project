@@ -21,8 +21,8 @@ class DogPicManager extends Component {
         .then((response) => {
             const data = response.data;
             this.setState({ urls: data});
-            console.log('Received dog data');
-            console.log(data)
+            // console.log('Received dog data');
+            // console.log(data)
         })
         .catch(() => {
             alert('Error getting dog data');
