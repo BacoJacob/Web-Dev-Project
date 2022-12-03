@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const pictureSchema = new Schema({
+const catPictureSchema = new Schema({
     url: { type: String, required: true},
 }, {
     timestamps : true,
 });
 
-const Picture = mongoose.model('Picture', pictureSchema);
+const CatPicture = mongoose.model('CatPicture', catPictureSchema);
 
-module.exports = Picture;
+module.exports = CatPicture;

@@ -21,7 +21,7 @@ function CatManager() {
 
     function send_data() {
         if (url) {
-            axios.post('http://localhost:5000/pictures/add', {
+            axios.post('http://localhost:5000/catPictures/add', {
             "url": url
             })
             .then(function (response) {
@@ -47,7 +47,7 @@ function CatManager() {
                 </h1>
             </div>
             <div className="mt-2 d-flex justify-content-center">
-                <Button className="mr-2" variant="primary" onClick={fetch_data}>Get Photo</Button>
+                <Button className="mr-2" variant="primary" onClick={fetch_data}>Get Cat Photo</Button>
                 <Button><i class="bi bi-hand-thumbs-up-fill" onClick={send_data}></i></Button>{' '}
                 <Button variant="danger" onClick={fetch_data}><i class="bi bi-hand-thumbs-down-fill"></i></Button>{' '}
                 <SaveButton></SaveButton>
