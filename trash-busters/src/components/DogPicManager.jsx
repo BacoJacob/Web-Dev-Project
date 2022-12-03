@@ -21,8 +21,6 @@ class DogPicManager extends Component {
         .then((response) => {
             const data = response.data;
             this.setState({ urls: data});
-            // console.log('Received dog data');
-            // console.log(data)
         })
         .catch(() => {
             alert('Error getting dog data');
@@ -31,11 +29,7 @@ class DogPicManager extends Component {
 
     displayDogPics = (pics) => {
         if (!pics.length) return null;
-
         return pics.map((url, index) => (
-            // <div key={index}>
-            //     <img src={url.url} alt="" />
-            // </div>
             <div key={index}>
                 <Card className="saved-pic-card">
                   <Card.Img className="saved-pic" variant="bottom" src={url.url} />
@@ -46,7 +40,7 @@ class DogPicManager extends Component {
     
     render() {
         return (
-            <div className="saved-pics mt-3 border" id='savedPics'>
+            <div className="saved-pics mt-3 border" id='savedDogPics'>
                 <h2 className='mt-3 mb-3'>View All Saved Dog Pictures Below</h2>
                 {this.displayDogPics(this.state.urls)}
             </div>

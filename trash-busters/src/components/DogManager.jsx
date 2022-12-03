@@ -1,9 +1,8 @@
 import React,{Component} from 'react';
-import { useState } from 'react';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image'
-import Dropdown from 'react-bootstrap/Dropdown';
+import Form from 'react-bootstrap/Form';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import "../sass/App.scss"
 
@@ -11,7 +10,9 @@ class DogManager extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            breedsStateList: []
+            breedsStateList: [],
+            selectedBreed: '',
+            selectedBreedImageUrl: '',
         }
     }
 
@@ -24,40 +25,65 @@ class DogManager extends Component {
         .then((response) => {
             const data = response.data;
             let dataArray = []
-            Object.keys(data).forEach(key => dataArray.push({name: key, value: data[key]}))
-            // this.setState({ breedsStateList: dataArray[0].value});
-            for(let breed in dataArray[0].value) {
-                // this.setState({breedsStateList: dataArray[0].value[breed]})
-                console.log(breed)
+            const unprocessedDataArray = []
+            Object.keys(data).forEach(key => unprocessedDataArray.push({name: key, value: data[key]}))
+            for(let breed in unprocessedDataArray[0].value) {
                 dataArray.push(breed)
-                // this.setState({breedsStateList: })
             }
-
-            // console.log('Received full breed list');
-            // console.log(dataArray[0].value);
+            this.setState({breedsStateList: dataArray})
         })
         .catch(() => {
             alert('Error getting full breed list');
         });
+    }
 
-        return (
-            <ul>
-            </ul>
-        );
+    onDogBreedChangeHandler = (event) => {
+        const breedSelected = event.target.value;
+        if (breedSelected === "") return;
+        this.setState({
+            selectedBreed: breedSelected,
+        });
+    }
+
+    displayAndSaveImageOnClick = () => {
+        axios.get(`https://dog.ceo/api/breed/${this.state.selectedBreed}/images/random`, ).then((response) => {
+            const data = response.data;
+            this.setState({
+                selectedBreedImageUrl: data.message
+            })
+        });
+    }
+
+    send_data() {
+        const url = this.state.selectedBreedImageUrl
+        if (url) {
+            axios.post('http://localhost:5000/dogPictures/add', {
+                "url": url,
+                breed: this.state.selectedBreed,
+            })
+            .then(function (response) {
+            console.log(response);
+            })
+            .catch(function (error) {
+            console.log(error);
+            });
+        }
+    }
+
+    getSaveButton () {
+        if (this.state.selectedBreedImageUrl) {
+           return <Button variant="success" onClick={this.send_data.bind(this)}>Save Photo</Button>
+        }
     }
 
     displayDogBreeds = (breeds) => {
         if(!breeds.length) {
-            // console.log('BREEDS::::')
-            // console.log(breeds)
             return null;
         }
-
-        return breeds.map((breed, index) => (
-            <div key={index}>
-                <h5>{breed}</h5>
-            </div>
-        ));
+            return <Form.Select className="w-25" defaultValue="" onChange={this.onDogBreedChangeHandler.bind(this)}>
+                <option disabled value="">Select breed</option>
+                {this.state.breedsStateList.map((value,index) => <option key={index}>{value}</option>)}
+            </Form.Select>
     };
 
     render() {
@@ -67,7 +93,15 @@ class DogManager extends Component {
                 <h1>
                     Random Dog Generator
                 </h1>
+            </div>
+            <div className="mt-2 d-flex justify-content-center">
                 {this.displayDogBreeds(this.state.breedsStateList)}
+                <Button onClick={this.displayAndSaveImageOnClick}>Get Dog Photo</Button>
+                {this.getSaveButton()}
+            </div>
+            <br />
+            <div className="mb-2 cat-picture-container d-flex justify-content-center">
+                <Image className="img-fluid shadow-3-strong mh cat-picture-container d-block" src={this.state.selectedBreedImageUrl} alt=""/>
             </div>
         </div>
         );

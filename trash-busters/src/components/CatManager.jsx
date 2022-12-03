@@ -47,7 +47,7 @@ function CatManager() {
                 </h1>
             </div>
             <div className="mt-2 d-flex justify-content-center">
-                <Button className="mr-2" variant="primary" onClick={fetch_data}>Get Photo</Button>
+                <Button className="mr-2" variant="primary" onClick={fetch_data}>Get Cat Photo</Button>
                 <SaveButton></SaveButton>
             </div>
             <br></br>
