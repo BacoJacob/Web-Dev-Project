@@ -99,6 +99,9 @@ class DogManager extends Component {
                 {this.displayDogBreeds(this.state.breedsStateList)}
                 <Button onClick={this.displayAndSaveImageOnClick}>Get Dog Photo</Button>
                 {this.getSaveButton()}
+                <Button className="mr-2" variant="primary" onClick={fetch_data}>Get Photo</Button>
+                <Button><i class="bi bi-hand-thumbs-up-fill" onClick={send_data}></i></Button>{' '}
+                <Button variant="danger" onClick={fetch_data}><i class="bi bi-hand-thumbs-down-fill"></i></Button>{' '}
             </div>
             <br />
             <div className="mb-2 cat-picture-container d-flex justify-content-center">
