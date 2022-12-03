@@ -16,6 +16,7 @@ class DogManager extends Component {
         }
     }
 
+    // todo: make getDogBreeds() run only once
     componentDidMount = () => {
         this.getDogBreeds();
     };
