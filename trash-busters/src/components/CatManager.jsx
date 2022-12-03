@@ -48,8 +48,6 @@ function CatManager() {
             </div>
             <div className="mt-2 d-flex justify-content-center">
                 <Button className="mr-2" variant="primary" onClick={fetch_data}>Get Cat Photo</Button>
-                <Button><i class="bi bi-hand-thumbs-up-fill" onClick={send_data}></i></Button>{' '}
-                <Button variant="danger" onClick={fetch_data}><i class="bi bi-hand-thumbs-down-fill"></i></Button>{' '}
                 <SaveButton></SaveButton>
             </div>
             <br></br>
