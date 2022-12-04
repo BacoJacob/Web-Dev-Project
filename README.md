@@ -8,8 +8,8 @@ The goal of this project is to make an api to run on a website that generates a 
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![Nodejs][Nodejs.org]][Nodejs-url]
 * [![MongoDB][Mongodb.com]][Mongodb-url]
-* [![Render][Render.com][Render-url]
-* [![Mongoosejs][Mongoosejs.com][Mongoosejs-url]
+* [![Render][Render.com]][Render-url]
+* [![Mongoosejs][Mongoosejs.com]][Mongoosejs-url]
 * [![Axios][Axios-http.com]][Axios-url]
 * [![Express][Expressjs.com]][Express-url]
 
@@ -20,5 +20,16 @@ The goal of this project is to make an api to run on a website that generates a 
 [React-url]: https://reactjs.org/
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
-[Nodejs.org]: https://img.shields.io/badge/Nodejs-20232A?style=for-the-badge&logo=node&logoColor=61DAFB
+[Nodejs.org]: https://img.shields.io/badge/Nodejs-20232A?style=for-the-badge&logo=node.js&logoColor=339933
 [Nodejs-url]: https://nodejs.org/
+[Mongodb.com]: https://img.shields.io/badge/MongoDB-4A4A55?style=for-the-badge&logo=MongoDB&logoColor=47A248
+[Mongodb-url]: https://mongodb.com
+[Render.com]: https://img.shields.io/badge/Render-FF2D20?style=for-the-badge&logo=Render&logoColor=46E3B7
+[Render-url]: https://render.com
+[Mongoosejs.com]: https://img.shields.io/badge/Mongoosejs-0769AD?style=for-the-badge&logo=&logoColor=46E3B7
+[Mongoosejs-url]: https://mongoosejs.com
+[Axios-http.com]: https://img.shields.io/badge/Axios-000000?style=for-the-badge&logo=Axios&logoColor=5A29E4
+[Axios-url]: https://axios-http.com
+[Expressjs.com]: https://img.shields.io/badge/Express-DD0031?style=for-the-badge&logo=Express&logoColor=000000
+[Express-url]: https://expressjs.com
+
