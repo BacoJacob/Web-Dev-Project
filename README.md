@@ -1,4 +1,6 @@
-# About This Project
+#Animal Pics App
+
+## About This Project
 
 The goal of this project is to make an api to run on a website that generates a random dog or cat picture and have the user upload photos of there own to the site. The user will be able to generate a random cat or dog photo by going to the cat or dog website and clicking the "Get Cat Photo" button or the "Get Dog Photo" button. The user will also be able to use the "Save Photo" button to upload an image to the server.
 
