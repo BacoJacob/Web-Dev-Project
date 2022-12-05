@@ -40,7 +40,7 @@ function CatManager() {
     }
 
     return (
-        <div className="mt-3 border" id='cats'>
+        <div className="mt-3 border scroll-modify" id='cats'>
             <div className='d-flex justify-content-center'>
                 <h1>
                     Random Cat Generator

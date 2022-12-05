@@ -1,35 +1,3 @@
-@import "~bootstrap/scss/bootstrap";
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
-$backgroung-color: #282c34;
-$white-color: white;
-$link-color: #61dafb;
-#map {
-  height: 100%;
-}
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-.footer {
-  margin-top: 1rem;
-  padding: 1rem;
-  background-color: rgb(235, 195, 64);
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}
-
 .cat-picture-container {
   max-height: 350px;
 }
@@ -47,4 +15,8 @@ code {
 
 .saved-pic-card {
   height: 250px;
+}
+
+html {
+  scroll-padding-top: 6rem;
 }
