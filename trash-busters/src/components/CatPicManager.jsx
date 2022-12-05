@@ -32,7 +32,7 @@ class CatPicManager extends Component {
 
         return pics.map((url, index) => (
             <div key={index}>
-                <Card className="saved-pic-card">
+                <Card className="saved-pic-card mt-5">
                   <Card.Img className="saved-pic" variant="bottom" src={url.url} />
                 </Card>
             </div>
@@ -42,7 +42,7 @@ class CatPicManager extends Component {
     render() {
         return (
             <div className="saved-pics mt-3 border" id='savedCatPics'>
-                <h2 className='mt-3 mb-3'>View All Saved Cat Pictures Below</h2>
+                <h2 className='d-flex justify-content-center mt-3 mb-3'>View All Saved Cat Pictures Below</h2>
                 {this.displayCatPics(this.state.urls)}
             </div>
         )

@@ -6,13 +6,13 @@ function NavbarComponent() {
   return (
     <>
       <Navbar className="sticky-top navbar" bg="primary" variant="dark">
-        <Container>
-          <Navbar.Brand>Animal Pics App</Navbar.Brand>
-          <Nav className="me-auto">
+        <Container className="d-flex">
+          <Navbar.Brand className="flex-grow-1" style={{fontSize: 50}}>Animal Pics App</Navbar.Brand>
+          <Nav style={{fontSize: 30}}>
             <Nav.Link href="#cats">Cats</Nav.Link>
             <Nav.Link href="#dogs">Dogs</Nav.Link>
-            <Nav.Link href="#savedCatPics">Saved Cat Pics</Nav.Link>
-            <Nav.Link href="#savedDogPics">Saved Dog Pics</Nav.Link>
+            <Nav.Link href="#savedCatPics">Saved-Cat-Pics</Nav.Link>
+            <Nav.Link href="#savedDogPics">Saved-Dog-Pics</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
