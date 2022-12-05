@@ -2,7 +2,7 @@
 
 ## About This Project
 
-The goal of this project is to make an api to run on a website that generates a random dog or cat picture and have the user upload photos of there own to the site. The user will be able to generate a random cat or dog photo by going to the cat or dog website and clicking the "Get Cat Photo" button or the "Get Dog Photo" button. The user will also be able to use the "Save Photo" button to upload an image to the server.
+The purpose of this app is to provide users with a fun and quick way to generate and save dog and cat pictures. Users can generate a random cat photo with a single click and save the photo (if they prefer) to a database. Users can also generate random dog photos after selecting a desired dog breed. Dog photos can be saved just like cat photos. All saved photos are persistently stored and displayed at the bottom of the page.
 
 ### Built With
 
@@ -57,11 +57,10 @@ Axios
 
 
 
-### Website Urls
+### Website Urls (Render)
 
-Url 1 here.  
+https://animal-pics-app.onrender.com/
 
-Url 2 here. 
 
 
 
