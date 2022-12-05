@@ -20,3 +20,9 @@
 html {
   scroll-padding-top: 6rem;
 }
+
+.footer {
+  display: flex;
+  min-height: 70vh;
+  flex-direction: column;
+}

@@ -3,6 +3,8 @@ import Card from 'react-bootstrap/Card';
 function Footer() {
   return (
     <>
+    <div className="footer"></div>
+    <div>
       {[
         'Primary',
       ].map((variant) => (
@@ -20,6 +22,7 @@ function Footer() {
           </Card.Body>
         </Card>
       ))}
+    </div>
     </>
   );
 }
