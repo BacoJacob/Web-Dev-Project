@@ -14,6 +14,56 @@ The goal of this project is to make an api to run on a website that generates a 
 * [![Express][Expressjs.com]][Express-url]
 
 
+### Required Packages
+
+Cors 2.8.5
+  ```sh
+  $ npm install cors
+  ```
+  
+Dotenv 16.0.3
+  ```sh
+  npm install dotenv --save
+  ```
+  
+Express 4.18.2
+  ```sh
+  $ npm install express
+  ```
+  
+Mongoose 6.7.1
+  ```sh
+  $ npm install mongoose
+  ```
+  
+React
+  ```sh
+  import React from 'react';
+  ```
+  
+ReactDom
+  ```sh
+  import ReactDOM from 'react-dom/client';
+  ```
+  
+Axios
+  ```sh
+  $ npm install axios
+  
+  import axios from 'axios';
+  ```
+
+
+
+### Website Urls
+
+Url 1 here.  
+
+Url 2 here. 
+
+
+
+
 
 
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
