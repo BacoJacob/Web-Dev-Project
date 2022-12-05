@@ -1,4 +1,4 @@
-#Animal Pics App
+# Animal Pics App
 
 ## About This Project
 
