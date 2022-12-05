@@ -17,6 +17,9 @@ The purpose of this app is to provide users with a fun and quick way to generate
 
 ### To Run Main Branch Locally
 
+To install all required dependencies, first navigate to the backend directory and run 'npm install'. Then, navigate to the 'trash-busters'
+directory and run 'yarn install'.
+
 Open two terminals. In the first terminal, navigate to the backend directory and run 'nodemon (or node) server.js'. This will start the server.
 In the second terminal, navigate to the trash-busters directory and run 'yarn start'. This will start the development server/ open the project
 in the browser.
